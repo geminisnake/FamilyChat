@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">亲聊</string>
+    <string name="button_login">登录</string>
+    <string name="button_register">注册</string>
+    <string name="remember_password">记住密码</string>
+    <string name="auto_login">自动登录</string>
+    <string name="account">账号</string>
+    <string name="password">密码</string>
+    <string name="mode_video_chat">视频</string>
+    <string name="mode_text_chat">消息</string>
+    <string name="mode_setting">功能列表</string>
+    <string name="text_button_exit">退出账号</string>
+    <string name="title_myactionbar">标题</string>
+    <string name="local_video">本地视频</string>
+    <string name="gaoduan_setting">高级设置</string>
+    <string name="net_test">网络测试</string>
+    <string name="personal_set">个人设置</string>
+    <string name="OneKeyAdd">一间添加至桌面</string>
+    <string name="autosearch">查找</string>
+    <string name="poweroff">退出</string>
+    <string name="newfr">新朋友</string>
+    <string name="newgroup">新建分组</string>
+    <string name="hongbao">发红包</string>
+    <string name="string_orpassword_wrong">账号或密码错误</string>
+    <string name="login_exception">无效输入</string>
+    <string name="cancel">取 消</string>
+    <string name="confirm">确 定</string>
+    <string name="dialogtitle">对话框标题</string>
+    <string name="dialogcontent">对话框内容</string>
+    <string name="back">返回</string>
+    <string name="nickname">昵称</string>
+    <string name="add_friend">添加好友</string>
+    <string name="fri_acc">好友账号</string>
+    <string name="yanzheng_info">验证信息(可以打个招呼)</string>
+    <string name="addfri_request">请求加你为好友</string>
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="true">
+    <View
+        android:layout_width="0.5dp"
+        android:layout_height="match_parent"
+        android:background="#959595"/>
+    <FrameLayout
+        android:id="@+id/emotion_tab_container"
+        android:layout_width="70dp"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@id/emotion_tab_btn"
+            android:layout_width="match_parent"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@id/emotion_tab_text_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:textSize="17sp"
+            android:typeface="monospace"
+            android:gravity="center"/>
+    </FrameLayout>
+
+    <View
+        android:layout_width="0.5dp"
+        android:layout_height="match_parent"
+        android:background="#959595"/>
+</LinearLayout>

@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+
+android {
+    packagingOptions{
+        exclude 'META-INF/maven/com.nostra13.universalimageloader/universal-image-loader/pom.properties'
+    }
+    compileSdkVersion 24
+    buildToolsVersion "24.0.0"
+    useLibrary 'org.apache.http.legacy'
+
+    defaultConfig {
+        applicationId "com.alienleeh.familychat"
+        minSdkVersion 15
+        targetSdkVersion 19
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+
+            assets.srcDirs = ['src/main/assets', 'src/main/assets/']
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:support-v4:24.0.0'
+    compile 'com.android.support:appcompat-v7:24.0.0'
+    compile 'com.android.support:design:24.0.0'
+    compile project(':mylibrary')
+    compile files('libs/nrtc-sdk.jar')
+    compile files('libs/cosinesdk.jar')
+    compile files('libs/nim-basesdk-2.5.0.jar')
+    compile files('libs/fastjson-1.1.34.android.jar')
+    compile files('libs/badgeview.jar')
+    compile project(':imagepickerModule')
+    compile 'com.android.support:recyclerview-v7:24.0.0'
+    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
+    compile files('libs/nim-avchat-2.5.0.jar')
+    compile project(path: ':SlidingMenu-master')
+}

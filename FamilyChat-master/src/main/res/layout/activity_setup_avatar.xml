@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+        <com.alienleeh.mylibrary.customUI.CircleImageView
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="30dp"
+            android:id="@id/avataractivity_set_default"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:src="@drawable/dddddddddefault"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical">
+            <Button
+                android:id="@id/bt_set_avatar_reset"
+                android:layout_width="wrap_content"
+                android:text="重置"
+                android:textSize="20sp"
+                android:textColor="#ffffff"
+                android:background="@drawable/selector_bt_sendmsg"
+                android:layout_height="35dp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+            <Button
+                android:id="@id/bt_set_avatar_custom"
+                android:layout_width="wrap_content"
+                android:text="选取照片"
+                android:textSize="20sp"
+                android:textColor="#ffffff"
+                android:background="@drawable/selector_bt_sendmsg"
+                android:layout_height="35dp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="55dp"
+            android:textSize="18sp"
+            android:textColor="#5aebbe"
+            android:text="点击选择头像"/>
+        <ImageView
+            android:id="@id/jiantou_animation_set_avatar"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="35dp"
+            android:src="@drawable/xiangxiajiantou"/>
+    </RelativeLayout>
+    <GridView
+        android:id="@id/gv1_avatar_acti"
+        android:numColumns="4"
+        android:stretchMode="columnWidth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

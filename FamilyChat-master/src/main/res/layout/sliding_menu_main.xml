@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jeremyfeinstein.slidingmenu.lib.SlidingMenu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/background"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/ll_slidingmenu"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:orientation="horizontal">
+            <com.alienleeh.mylibrary.customUI.CircleImageView
+                android:id="@id/civ_sliding"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/example_avatar"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@id/sliding_address"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="杭州"
+                    android:textColor="#fed500"
+                    android:textSize="23sp"/>
+                <TextView
+                    android:id="@id/sliding_tianqi"
+                    android:layout_marginTop="9dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fed500"
+                    android:text="天气晴  26℃"
+                    android:textSize="23sp"/>
+            </LinearLayout>
+        </LinearLayout>
+        <ListView
+            android:id="@+id/lv_slidingmenu"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_below="@id/ll_slidingmenu"
+            android:background="#00000000">
+
+        </ListView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            >
+            <TextView
+                android:id="@id/sliding_music"
+                android:drawableLeft="@drawable/music"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="50dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="  设置"
+                android:textSize="20sp"/>
+            <TextView
+                android:id="@id/sliding_daynight"
+                android:drawableLeft="@drawable/moon_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="50dp"
+                android:text=" 夜间"
+                android:textSize="20sp"
+                android:textColor="@color/colorPrimary"/>
+        </RelativeLayout>
+    </LinearLayout>
+</com.jeremyfeinstein.slidingmenu.lib.SlidingMenu>
