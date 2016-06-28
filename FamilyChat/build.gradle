@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    compileSdkVersion 23
+    buildToolsVersion "24.0.0"
+    defaultConfig {
+        applicationId "com.alienleeh.familychat"
+        minSdkVersion 15
+        targetSdkVersion 19
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:support-v4:23.+'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:design:23.4.0'
+    compile project(':SlidingMenulibrary')
+    compile project(':circleimageview')
+    compile files('libs/nrtc-sdk.jar')
+    compile files('libs/cosinesdk.jar')
+    compile files('libs/nim-sdk-2.4.0.jar')
+}

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" 
+    android:paddingTop="3dp"
+    android:paddingBottom="3dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="@drawable/selector_lvmsg_conversation">
+        <ImageView 
+            android:id="@+id/iv_conversation_avatarphoto"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="4dp"/>
+        <TextView 
+            android:id="@+id/tv_conversation_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="nnnn-mm-dd"
+            android:textSize="16sp"
+            android:layout_alignParentRight="true"/>        
+        
+        <TextView 
+            android:id="@+id/tv_conversation_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/iv_conversation_avatarphoto"
+            android:layout_toLeftOf="@+id/tv_conversation_date"
+            android:textSize="18sp"
+            android:text="姓名"/>
+        
+        <TextView 
+            android:id="@+id/tv_conversation_body"
+            android:layout_toRightOf="@id/iv_conversation_avatarphoto"
+            android:layout_below="@+id/tv_conversation_address"
+            android:layout_alignBottom="@+id/iv_conversation_avatarphoto"
+            android:gravity="bottom"
+            android:text="这里面是短信内容,这里面是短信内容，这里面是短信内容"
+            android:ellipsize="end"
+            android:textSize="15sp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            />
+
+    </RelativeLayout>
+    
+
+</LinearLayout>

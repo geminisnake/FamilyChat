@@ -1,0 +1,1 @@
+include ':FamilyChat', ':sample', ':qqdemo', ':SlidingMenulibrary', ':circleimageview', ':uikit', ':myfamilychat'
