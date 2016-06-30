@@ -3,9 +3,6 @@ package com.alienleeh.familychat.ui.fragment;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -54,34 +51,11 @@ public class MessageFragment extends  BaseFragment{
     public View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_msg_conversation,container,false);
 
-        setHasOptionsMenu(true);
         ll_system_msg = (LinearLayout) view.findViewById(R.id.ll_system_msg);
         systemmsg_civ = (CircleImageView) view.findViewById(R.id.systemmsg_civ);
         listView = (ListView) view.findViewById(R.id.lv_in_msg_fragment);
         registerObserver(true);
         return view;
-    }
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        menu.clear();
-        MenuInflater menuInflater = getActivity().getMenuInflater();
-        menuInflater.inflate(R.menu.custom_menu1,menu);
-        super.onCreateOptionsMenu(menu,inflater);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.menu_it_addToDesk:
-                ToastUtils.showToast(getContext(),"已添加至桌面");
-                return true;
-            case R.id.menu_it_autosearch:
-                adapter.notifyDataSetChanged();
-                ToastUtils.showToast(getContext(),contactList.size()+"");
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
     }
 
     @Override

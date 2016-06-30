@@ -15,5 +15,8 @@
         android:title="@string/OneKeyAdd"
         app:showAsAction="always"/>
 
-
-</menu>
+    <item
+        android:id="@id/menu_power_off"
+        android:icon="@drawable/ic_power_settings_new_white_36dp"
+        android:title="@string/poweroff"
+        app:showAsAction="always"/></menu>

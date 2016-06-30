@@ -6,6 +6,12 @@
         <attr name="civ_border_overlay" format="boolean" />
         <attr name="civ_fill_color" format="color" />
     </declare-styleable>
+    <declare-styleable name="ProgressCircle">
+        <attr name="radius" format="float"/>
+        <attr name="inner_color" format="color"/>
+        <attr name="ring_color" format="color"/>
+        <attr name="text_color" format="color"/>
+    </declare-styleable>
 
     <declare-styleable name="CircleIndicator">
         <attr name="ci_width" format="dimension"/>

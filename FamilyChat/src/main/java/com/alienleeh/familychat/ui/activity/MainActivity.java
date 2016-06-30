@@ -7,8 +7,10 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.view.Gravity;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.CursorAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -29,9 +31,11 @@ import com.alienleeh.familychat.helper.UserInfoHelper;
 import com.alienleeh.familychat.manager.ActivitiesFinisher;
 import com.alienleeh.familychat.manager.NIMClientManager;
 import com.alienleeh.familychat.ui.dialog.LoadingDialog;
+import com.alienleeh.familychat.ui.dialog.StandardDialog;
 import com.alienleeh.familychat.ui.fragment.FunctionFragment;
 import com.alienleeh.familychat.ui.fragment.MessageFragment;
 import com.alienleeh.familychat.ui.fragment.VideoFragment;
+import com.alienleeh.familychat.utils.ToastUtils;
 import com.alienleeh.mylibrary.customUI.CircleImageView;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
@@ -147,12 +151,52 @@ public class MainActivity extends SlidingFragmentActivity implements View.OnClic
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.custom_menu1,menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        if (main_vpager != null) {
+            int currentPage = main_vpager.getCurrentItem();
+            if (currentPage != 2) {
+                menu.findItem(R.id.menu_it_addToDesk).setVisible(true);
+                menu.findItem(R.id.menu_it_autosearch).setVisible(true);
+                menu.findItem(R.id.menu_power_off).setVisible(false);
+            } else {
+                menu.findItem(R.id.menu_it_addToDesk).setVisible(false);
+                menu.findItem(R.id.menu_it_autosearch).setVisible(false);
+                menu.findItem(R.id.menu_power_off).setVisible(true);
+            }
+        }
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
+        switch (item.getItemId()){
+            case R.id.menu_it_autosearch:
+
+                break;
+            case R.id.menu_it_addToDesk:
+
+                break;
+            case R.id.menu_power_off:
+                StandardDialog.showDialog(this, "确认退出", "您将结束此程序，关闭所有页面。确定吗？", new StandardDialog.StandardDialogListener() {
+                    @Override
+                    public void onCancel() {
+                        ToastUtils.showToast(MainActivity.this,"谢谢~明智之选");
+                    }
+
+                    @Override
+                    public void onConfirm() {
+                        ActivitiesFinisher.finishAll();
+                    }
+                });
+                break;
+        }
+        return true;
     }
 
     @Override
@@ -292,6 +336,8 @@ public class MainActivity extends SlidingFragmentActivity implements View.OnClic
     }
     protected void onTabPageChange() {
         // 获取ViewPager当前显示的索引
+        getWindow().invalidatePanelMenu(Window.FEATURE_OPTIONS_PANEL);
+
         int item = main_vpager.getCurrentItem();
         switch (item){
             case 0:

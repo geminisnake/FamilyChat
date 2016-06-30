@@ -49,7 +49,6 @@ public class VideoFragment extends BaseFragment implements SwipeRefreshLayout.On
     @Override
     public View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_videomode,container,false);
-        setHasOptionsMenu(true);
         listView = (ListView) view.findViewById(R.id.lv_videomode_friendlist);
         bt_add_newfr = (LinearLayout) view.findViewById(R.id.bt_add_newfr);
         bt_add_newgroup = (LinearLayout) view.findViewById(R.id.bt_add_newgroup);
@@ -66,6 +65,8 @@ public class VideoFragment extends BaseFragment implements SwipeRefreshLayout.On
         menuInflater.inflate(R.menu.custom_menu1,menu);
         super.onCreateOptionsMenu(menu,inflater);
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

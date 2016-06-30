@@ -3,9 +3,6 @@ package com.alienleeh.familychat.ui.fragment;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -18,13 +15,12 @@ import com.alienleeh.familychat.base.BaseFragment;
 import com.alienleeh.familychat.cache.UserInfoCache;
 import com.alienleeh.familychat.helper.ImageLoaderHelper;
 import com.alienleeh.familychat.helper.LogoutHelper;
-import com.alienleeh.familychat.manager.ActivitiesFinisher;
 import com.alienleeh.familychat.ui.activity.EditInfoActivity;
 import com.alienleeh.familychat.ui.activity.LoginActivity;
 import com.alienleeh.familychat.ui.activity.SetAvatarActivity;
-import com.alienleeh.familychat.ui.dialog.StandardDialog;
+import com.alienleeh.familychat.ui.activity.SettingActivity;
+import com.alienleeh.familychat.ui.activity.WebViewActivity;
 import com.alienleeh.familychat.utils.ActivityUtils;
-import com.alienleeh.familychat.utils.ToastUtils;
 import com.alienleeh.mylibrary.customUI.CircleImageView;
 import com.netease.nimlib.sdk.uinfo.model.NimUserInfo;
 
@@ -41,12 +37,18 @@ public class FunctionFragment extends BaseFragment {
     private TextView mysign_functionpage;
     private ImageView mygender_functionpage;
     private NimUserInfo myInfo;
+    private LinearLayout item_func_github;
+    private static String GIT_URL = "http://github.com/geminisnake";
+    private LinearLayout item_func_zidingyi;
 
     @Override
     public View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_function,container,false);
         bt_function_exit = (Button) view.findViewById(R.id.bt_function_exit);
         item_func_personal = (LinearLayout) view.findViewById(R.id.item_func_personal);
+        item_func_github = (LinearLayout) view.findViewById(R.id.item_func_github);
+        item_func_zidingyi = (LinearLayout) view.findViewById(R.id.item_func_gaoduan_setting);
+
         civ_entrance_setavatar = (CircleImageView) view.findViewById(R.id.civ_entrance_setavatar);
         mynick_functionpage = (TextView) view.findViewById(R.id.mynick_functionpage);
         myinfo_functionpage = (TextView) view.findViewById(R.id.myinfo_functionpage);
@@ -61,6 +63,8 @@ public class FunctionFragment extends BaseFragment {
         bt_function_exit.setOnClickListener(this);
         item_func_personal.setOnClickListener(this);
         civ_entrance_setavatar.setOnClickListener(this);
+        item_func_github.setOnClickListener(this);
+        item_func_zidingyi.setOnClickListener(this);
     }
 
     @Override
@@ -93,35 +97,6 @@ public class FunctionFragment extends BaseFragment {
         }
     }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        menu.clear();
-        MenuInflater menuInflater = this.getActivity().getMenuInflater();
-        menuInflater.inflate(R.menu.custom_menu2,menu);
-        super.onCreateOptionsMenu(menu, inflater);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.menu_power_off:
-                StandardDialog.showDialog(getContext(), "确认退出", "您将结束此程序，关闭所有页面。确定吗？", new StandardDialog.StandardDialogListener() {
-                    @Override
-                    public void onCancel() {
-                        ToastUtils.showToast(getContext(),"谢谢~明智之选");
-                    }
-
-                    @Override
-                    public void onConfirm() {
-                        ActivitiesFinisher.finishAll();
-                    }
-                });
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-
-    }
 
     @Override
     public void processClick(View v) {
@@ -136,6 +111,12 @@ public class FunctionFragment extends BaseFragment {
             case R.id.civ_entrance_setavatar:
                 String path = myInfo.getAvatar();
                 ActivityUtils.startActivity(getActivity(), SetAvatarActivity.class,path);
+                break;
+            case R.id.item_func_github:
+                WebViewActivity.start(getContext(),GIT_URL);
+                break;
+            case R.id.item_func_gaoduan_setting:
+                SettingActivity.start(getContext());
                 break;
         }
     }

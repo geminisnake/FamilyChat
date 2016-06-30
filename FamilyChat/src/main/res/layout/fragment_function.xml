@@ -145,6 +145,17 @@
                         android:text="@string/net_test"/>
                 </LinearLayout>
 
+                <View style="@style/divider_custom"/>
+                <LinearLayout
+                    style="@style/list_in_function"
+                    android:id="@id/item_func_github">
+                    <ImageView
+                        style="@style/icon_function"
+                        android:src="@drawable/github"/>
+                    <TextView
+                        style="@style/text_func_item"
+                        android:text="Author's Github"/>
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

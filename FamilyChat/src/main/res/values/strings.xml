@@ -6,13 +6,13 @@
     <string name="auto_login">自动登录</string>
     <string name="account">账号</string>
     <string name="password">密码</string>
-    <string name="mode_video_chat">视频</string>
+    <string name="mode_video_chat">联系人</string>
     <string name="mode_text_chat">消息</string>
     <string name="mode_setting">功能列表</string>
     <string name="text_button_exit">退出账号</string>
     <string name="title_myactionbar">标题</string>
     <string name="local_video">本地视频</string>
-    <string name="gaoduan_setting">高级设置</string>
+    <string name="gaoduan_setting">自定义选项</string>
     <string name="net_test">网络测试</string>
     <string name="personal_set">个人设置</string>
     <string name="OneKeyAdd">一间添加至桌面</string>

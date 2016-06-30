@@ -147,4 +147,13 @@
     <item name="audio_icon_anim_left" type="id">audio_icon_anim_left</item>
     <item name="audio_icon_anim_right" type="id">audio_icon_anim_right</item>
     <item name="emotion_tab_text_btn" type="id">emotion_tab_text_btn</item>
+    <item name="item_func_github" type="id">item_func_github</item>
+    <item name="main_webview" type="id">main_webview</item>
+    <item name="msg_notify_setting_acti" type="id">msg_notify_setting_acti</item>
+    <item name="about_me_setting_acti" type="id">about_me_setting_acti</item>
+    <item name="clear_cachemsg_setting_acti" type="id">clear_cachemsg_setting_acti</item>
+    <item name="filter_notify_seting_acti" type="id">filter_notify_seting_acti</item>
+    <item name="net_rec_setting_acti" type="id">net_rec_setting_acti</item>
+    <item name="not_disturb_setting_acti" type="id">not_disturb_setting_acti</item>
+    <item name="mode_tingtong_setting_acti" type="id">mode_tingtong_setting_acti</item>
 </resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_height="55dp">
+    <TextView
+        android:id="@+id/func_name_switch_bt"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginLeft="13dp"
+        android:text="消息提醒"/>
+    <com.alienleeh.mylibrary.customUI.SwitchButton
+        android:layout_width="70dp"
+        android:id="@+id/func_entity_switch_bt"
+        android:layout_marginRight="20dp"
+        android:layout_height="30dp" />
+</LinearLayout>

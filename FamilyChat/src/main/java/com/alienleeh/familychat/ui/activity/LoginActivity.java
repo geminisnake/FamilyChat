@@ -64,7 +64,9 @@ public class LoginActivity extends BaseActivity{
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.custom_menu2,menu);
+        menuInflater.inflate(R.menu.custom_menu1,menu);
+        menu.findItem(R.id.menu_it_autosearch).setVisible(false);
+        menu.findItem(R.id.menu_it_addToDesk).setVisible(false);
         return super.onCreateOptionsMenu(menu);
     }
 
