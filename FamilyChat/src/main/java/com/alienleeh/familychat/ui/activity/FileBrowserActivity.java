@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by AlienLeeH on 2016/7/14..Hour:23
+ * Created by AlienLeeH on 2016/2/14..Hour:23
  * Email:alienleeh@foxmail.com
  * Description:浏览文件Activity
  */
@@ -31,6 +31,7 @@ public class FileBrowserActivity extends BaseActivity {
     private ListView filesView;
     private static final String ROOT_PATH =
             Environment.getExternalStorageDirectory().getPath() + "/";
+
     public static final String EXTRA_DATA_PATH = "EXTRA_DATA_PATH";
     private List<String> paths;
     private List<String> names;

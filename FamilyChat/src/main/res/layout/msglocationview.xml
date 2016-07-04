@@ -3,7 +3,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <customProgress.ProgressImageView
+    <com.alienleeh.mylibrary.customUI.ProgressImageView
         android:id="@+id/message_item_location_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

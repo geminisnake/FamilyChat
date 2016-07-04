@@ -1,1 +1,1 @@
-include ':FamilyChat-master', ':SlidingMenu-master', ':mylibrary', ':imagepickerModule'
+include ':FamilyChat', ':SlidingMenu-master', ':mylibrary', ':imagepickerModule', ':HappyMusicPlayer', ':filepicker'
