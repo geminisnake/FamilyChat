@@ -28,7 +28,7 @@ public class ProgressImageView extends ImageView{
 
     private Context mContext;
     private Paint mPaint;
-    private float progress;
+    private int progress;
     private float radius;
     private Rect textBounds;
     private static final Paint maskPaint = createMaskPaint();
@@ -44,7 +44,7 @@ public class ProgressImageView extends ImageView{
         return paint;
     }
 
-    public void setProgress(float progress) {
+    public void setProgress(int progress) {
         this.progress = progress;
         postInvalidate();
     }
@@ -65,15 +65,16 @@ public class ProgressImageView extends ImageView{
         mPaint.setStyle(Paint.Style.FILL);
         radius = Utils.dp2px(mContext,15);
         textBounds = new Rect();
-        mPaint.getTextBounds("100%",0,"100%".length(), textBounds);
+
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
+        int width = getWidth();
+        int height = getHeight();
         if (mask != null) {
             // bounds
-            int width = getWidth();
-            int height = getHeight();
+
 
             // create blend layer
             canvas.saveLayer(0, 0, width, height, null, Canvas.ALL_SAVE_FLAG);
@@ -105,14 +106,16 @@ public class ProgressImageView extends ImageView{
         RectF rect = new RectF(0,0,getWidth(),getHeight()-getHeight()*progress/100);
         canvas.drawRoundRect(rect,radius,radius,mPaint);
         //打印进度数字
-        mPaint.setTextSize(30);
-        mPaint.setColor(Color.WHITE);
-        mPaint.setStrokeWidth(2);
-        canvas.drawText(progress+"%",
-                (float)getWidth()/2 - (float)textBounds.width()/2,
-                (float)getHeight() / 2,
-                mPaint);
-
+        if(progress != 100){
+            mPaint.setColor(Color.WHITE);
+            mPaint.setTextSize(45);
+            mPaint.getTextBounds("100%",0,"100%".length(), textBounds);
+            mPaint.setStrokeWidth(2);
+            canvas.drawText(progress+"%",
+                    (float)getWidth()/2 - (float)textBounds.width()/2,
+                    (float)getHeight() / 2 + textBounds.height() /2,
+                    mPaint); 
+        }
     }
 
     public void loadAsAsset(String locationImage, DisplayImageOptions options) {
@@ -121,7 +124,8 @@ public class ProgressImageView extends ImageView{
     }
 
     public void loadAsPath(String thumbpath, DisplayImageOptions options) {
-        ImageLoader.getInstance().displayImage(thumbpath,this,options);
+        String url = ImageDownloader.Scheme.FILE.wrap(thumbpath);
+        ImageLoader.getInstance().displayImage(url,this,options);
     }
 
     public void loadAsResource(int default_img) {
