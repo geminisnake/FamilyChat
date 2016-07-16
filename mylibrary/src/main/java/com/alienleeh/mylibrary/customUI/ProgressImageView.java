@@ -114,7 +114,7 @@ public class ProgressImageView extends ImageView{
             canvas.drawText(progress+"%",
                     (float)getWidth()/2 - (float)textBounds.width()/2,
                     (float)getHeight() / 2 + textBounds.height() /2,
-                    mPaint); 
+                    mPaint);
         }
     }
 
