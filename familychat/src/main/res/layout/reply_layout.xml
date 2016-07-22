@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f9a64a"
+        android:padding="5dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <Button
+            android:id="@id/bt_audio_msg"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/bt_audio_msg"
+            android:layout_marginRight="3dp"/>
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@id/et_conversation_typemessage"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:minHeight="30dp"
+                android:padding="3dp"
+                android:maxLines="4"
+                android:background="@drawable/bg_btn_normal"/>
+            <Button
+                android:id="@id/bt_send_audio"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="按住 说话"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                android:background="@drawable/selector_button_exit"/>
+        </FrameLayout>
+        <Button
+            android:id="@id/bt_show_emoji"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="3dp"
+            android:background="@drawable/selector_bt_emoji"/>
+        <Button
+            android:id="@id/bt_conver_sendmessage"
+            android:text="发送"
+            android:textColor="#ffffff"
+            android:background="@drawable/selector_bt_sendmsg"
+            android:layout_marginLeft="5dp"
+            android:layout_height="30dp"
+            android:layout_width="35dp"
+            android:visibility="visible"/>
+    </LinearLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@id/emotion_container"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone">
+        <com.alienleeh.familychat.customUI.NoScrollViewPager
+            android:id="@id/viewpager_emoji_group"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#959595"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@id/tab_emoji_group"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"/>
+    </LinearLayout>
+</LinearLayout>
