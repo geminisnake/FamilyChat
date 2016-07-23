@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="240dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center_horizontal"
+    android:background="@drawable/bg_confirm_delete_dialog">
+    <TextView 
+        android:id="@+id/tv_listdialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="对话框标题"
+        android:textSize="18sp"/>
+  
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000"/>
+     <ListView 
+        android:id="@+id/lv_listdialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:listSelector="@android:color/transparent">
+     </ListView>
+</LinearLayout>
